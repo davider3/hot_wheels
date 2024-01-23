@@ -21,7 +21,7 @@ The mechanics of the steering is what I expect to be the hardest part on the mec
 ### Microcontrollers
 
 I have choosen to use the [Xiao ESP32S3](https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html) because it has built in wifi and BLE as well as a camera module all while being about the size of my thumb nail.
-Because I don't want to solder headers on the the ESP32S3 I am using a [Xiao nRF52840](https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html) that I have on hand for some of the breadboard testing such as with the motors. It is very similar to the ESP32S3
+Because I don't want to solder headers on the the ESP32S3 I am using a [Xiao nRF52840](https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html) that I have on hand for some of the breadboard testing such as with the motors. It is very similar to the ESP32S3 both in how it's programmed and it's pinouts.
 
 ### Motors
 
