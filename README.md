@@ -16,7 +16,7 @@ The plan is to 3D print the rims and then use a small O-ring as the tire.
 
 The mechanics of the steering is what I expect to be the hardest part on the mechanical side. I am going to need to do more research on this part.
 
-## Electronics
+## Electrical
 
 ### Microcontrollers
 
