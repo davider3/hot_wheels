@@ -59,6 +59,7 @@ I have learned the the Xiao ESP32S3 can not use both BLE and wifi simultaneously
 ### Other
 
 One of the other things that I want to include is some headlights
+Something else that I have thought about is that I might need to get rid of the original base of the car and replace it with a custom pcb to make everything fit.
 
 ## Software
 
