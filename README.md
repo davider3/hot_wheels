@@ -41,6 +41,10 @@ I plan to use a DC motor to run the drive train of the car. I have 3 small dc mo
 
 A linear servo motor will be used to control the steering. [This](https://www.aliexpress.us/item/3256803902617918.html?spm=a2g0o.order_list.order_list_main.25.11d91802HKlx2B&gatewayAdapt=glo2usa) is the one that I have ordered and am waiting for its arrival for testing.
 
+### Camera
+
+I am usig the camera module that came with the ESP32S3.
+
 ### Wireless Comunication
 
 #### Wifi
