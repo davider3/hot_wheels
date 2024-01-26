@@ -49,7 +49,7 @@ I am usig the camera module that came with the ESP32S3.
 
 #### Wifi
 
-The ESP32S3 can host it's own site where it can stream the video that it is recording. I am expecting this to be one of the most difficult parts of this project because it is something that I have never attempting and do know much about.
+The ESP32S3 can host it's own site where it can stream the video that it is recording. I am expecting this to be one of the most difficult parts of this project because it is something that I have never attempting and do know much about. I also found a video that talks about how I can make the wifi connectivity dynamic instead of having to hard code the credentials in the code when I upload it. I will look more into that after I get the hard coding version working
 
 #### Bluetooth
 
@@ -63,8 +63,29 @@ I have learned the the Xiao ESP32S3 can not use both BLE and wifi simultaneously
 ### Other
 
 One of the other things that I want to include is some headlights
-Something else that I have thought about is that I might need to get rid of the original base of the car and replace it with a custom pcb to make everything fit.
+Something else that I have thought about is that I might need to get rid of the original base of the car and replace it with a custom pcb to make everything fit. But I will need to do some testing first.
+I will be using a 3.7V Lipo battery that I can solder directly to the microcontroller. Both of the Xiao micros allow for charging of the battery through the usb-c port. The size of the battery will depend on the left over space in the car.
 
 ## Software
 
-I will be using the Platformio extension of VS Code to do the programming. I have already gone through all of the necessary setup so that I can create projects for both of the microcontrollers that I will be using and have successfully uploaded code to both micros. My plan is to have a sketch that can individually control each of the components before integrating them.
+I will be using the Platformio extension of VS Code to do the programming. My plan is to have a sketch that can individually control each of the components before integrating them.
+
+### Things to control with code
+
+#### For the Car
+
+* [x] Xiao nRF52840
+* [x] Xiao ESP32S3
+* [x] Motor and driver
+* [ ] Camera
+* [ ] Servo
+* [ ] Bluetooth Module
+* [ ] Battery and charging
+* [ ] Headlights
+
+#### For the Controller
+
+* [ ] ESP32 (Might end up using the nRF52840)
+* [ ] Joystick
+* [ ] Bluetooth
+* [ ] Steering wheel and throttle pots
