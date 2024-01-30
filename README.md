@@ -77,7 +77,7 @@ I will be using the Platformio extension of VS Code to do the programming. My pl
 * [x] Xiao nRF52840
 * [x] Xiao ESP32S3
 * [x] Motor and driver
-* [ ] Camera
+* [x] Camera
 * [ ] Servo
 * [ ] Bluetooth Module
 * [ ] Battery and charging
