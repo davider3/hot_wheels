@@ -78,14 +78,18 @@ I will be using the Platformio extension of VS Code to do the programming. My pl
 * [x] Xiao ESP32S3
 * [x] Motor and driver
 * [x] Camera
-* [ ] Servo
-* [ ] Bluetooth Module
+* [x] Servo
+* [ ] ~~Bluetooth Module~~
+* [ ] Radio Module
 * [ ] Battery and charging
 * [ ] Headlights
 
 #### For the Controller
 
-* [ ] ESP32 (Might end up using the nRF52840)
-* [ ] Joystick
-* [ ] Bluetooth
-* [ ] Steering wheel and throttle pots
+* [x] nRF52840
+* [x] Joystick
+* [ ] ~~Bluetooth~~
+* [ ] Radio Module
+* [ ] Throttle Potentiometer
+* [ ] SIM Steering wheel potentiometer 
+* [ ] SIM Throttle potentiometer
