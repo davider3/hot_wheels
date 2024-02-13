@@ -1,13 +1,17 @@
 #include <Arduino.h>
 
+#define RED 11
+#define GREEN 12
+#define BLUE 13
+
 void setup(){
-  pinMode(11, OUTPUT); // RED
-  pinMode(12, OUTPUT); // GREEN
-  pinMode(13, OUTPUT); // BLUE
+  pinMode(RED, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+  pinMode(BLUE, OUTPUT);
 }
 
 void loop(){
-  digitalWrite(11, LOW);
-  digitalWrite(12, LOW);
-  digitalWrite(13, HIGH);
+  digitalWrite(RED, LOW);
+  digitalWrite(GREEN, LOW);
+  digitalWrite(BLUE, HIGH);
 }
