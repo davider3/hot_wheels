@@ -1,13 +1,35 @@
 #include <Arduino.h>
+#include <Servo.h>
+
+#define RED 11
+#define GREEN 12
+#define BLUE 13
+#define PIN D0
+
+// DECLARE SERVO OBJECT
+Servo steering;
 
 void setup(){
-  pinMode(11, OUTPUT); // RED
-  pinMode(12, OUTPUT); // GREEN
-  pinMode(13, OUTPUT); // BLUE
+  // SETUP LEDS
+  pinMode(RED, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+  pinMode(BLUE, OUTPUT);
+  digitalWrite(RED, HIGH);
+  digitalWrite(GREEN, LOW);
+  digitalWrite(BLUE, HIGH);
+
+  // SETUP SERVO
+  steering.attach(PIN);
 }
 
-void loop(){
-  digitalWrite(11, LOW);
-  digitalWrite(12, LOW);
-  digitalWrite(13, HIGH);
+void loop() {
+  for(int i=0; i<=180; ++i){
+    steering.write(i);
+    delay(10);
+  }
+  for(int i=180; i>=0; --i){
+    steering.write(i);
+    delay(10);
+  }
 }
+
