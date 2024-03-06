@@ -3,8 +3,8 @@
 #define RED 11
 #define GREEN 12
 #define BLUE 13
-#define MTR1 10
-#define MTR2 9
+#define MTR1 2
+#define MTR2 3
 
 void setup(){
   // DEFINE RGB LED PINS AS OUTPUTS
@@ -22,10 +22,5 @@ void setup(){
 }
 
 void loop(){
-  // for(int i=0; i<256; i+=10){
-  //   Serial.println(i);
-  //   analogWrite(MTR1, i);
-  //   delay(1000);
-  // }
-
+  analogWrite(MTR2, 255);
 }

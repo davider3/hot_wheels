@@ -97,11 +97,6 @@ void setup() {
   s->set_vflip(s, 1);
 #endif
 
-// Setup LED FLash if LED pin is defined in camera_pins.h
-#if defined(LED_GPIO_NUM)
-  setupLedFlash(LED_GPIO_NUM);
-#endif
-
   WiFi.begin(ssid, password);
   WiFi.setSleep(false);
 
@@ -121,5 +116,6 @@ void setup() {
 
 void loop() {
   // Do nothing. Everything is done in another task by the web server
+  Serial.println(WiFi.localIP());
   delay(10000);
 }

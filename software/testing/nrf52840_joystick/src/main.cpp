@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
-#define X A2
-#define Y A1
+#define X A5
+#define Y A4
 #define PUSH 3
 
 void setup() {
@@ -22,5 +22,5 @@ void loop() {
   Serial.println(analogRead(Y));
   Serial.print("Button: ");
   Serial.println(digitalRead(PUSH));
-  delay(2000);
+  delay(200);
 }
