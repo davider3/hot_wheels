@@ -1,6 +1,10 @@
 #include "Motor.h"
 
-Motor::Motor(int go, int back, int en=-1){
+Motor::Motor(){
+    
+}
+
+Motor::Motor(int go, int back, int en){
     goPin = go;
     backPin = back;
     enPin = en;

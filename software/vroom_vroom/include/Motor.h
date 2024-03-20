@@ -10,6 +10,8 @@ private:
     int enPin;
 
 public:
+    Motor();
+    
     Motor(int, int, int);
 
     void forward(int);

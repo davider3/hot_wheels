@@ -9,6 +9,10 @@
 const char* ssid = "Helm's Depot";
 const char* password = "sweetballoon047";
 
+
+// const char* ssid = "David";
+// const char* password = "ckmh013$";
+
 void startCameraServer();
 void setupLedFlash(int pin);
 

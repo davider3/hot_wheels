@@ -1,26 +1,31 @@
 #include <Arduino.h>
 #include "Camera.h"
+#include "Car.h"
+#include "pins.h"
 
 // const char* ssid = "Helm's Depot";
 // const char* password = "sweetballoon047";
 
-// void startCameraServer();
-// void setupLedFlash(int pin);
+const char* ssid = "David";
+const char* password = "ckmh013$";
 
-// Camera cam = Camera(ssid, password);
+IPAddress ip;
+Car car;
 
 void setup() {
 
-  // Serial.begin(115200);
-  // Serial.setDebugOutput(true);
-  // Serial.println();
+  Serial.begin(115200);
+  Serial.setDebugOutput(true);
+  Serial.println();
 
-  // startCameraServer();
+  ip = camSetup(ssid, password);
   
+  car = Car(FORWARD, BACKWARD, STEERING, LIGHTS, -1);
 }
 
 void loop() {
-  // Serial.println("try");
-  // Serial.println(cam.getIP());
-  // delay(1000);
+
+  car.drive();
+
+  Serial.println(ip);
 }
