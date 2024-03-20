@@ -7,18 +7,6 @@
 #define CAMERA_MODEL_XIAO_ESP32S3 // Has PSRAM
 #include "camera_pins.h"
 
-// class Camera{
-// private:
-//     IPAddress ip;
-
-// public:
-
-//     Camera(const char*, const char*);
-
-//     IPAddress getIP();
-
-// };
-
 void startCameraServer();
 void setupLedFlash(int pin);
 
