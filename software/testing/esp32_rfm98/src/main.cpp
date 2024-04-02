@@ -1,47 +1,42 @@
-#include <Arduino.h>
 #include <SPI.h>
-#include <RH_RF95.h>
+#include <LoRa.h>
+char rec[8];
+int i = 0;
+int val = 0;
+char vals[8];
+char pot1[4];
 
-#define RFM95_CS 17
-#define RFM95_RST 16
-#define RFM95_INT 2
-#define RFM95_FREQ 433.0
+#define RESET 22
+#define NSS 15
+#define DI00 2
 
-RH_RF95 rf95(RFM95_CS, RFM95_INT);
+bool state = 0;
 
 void setup() {
-    Serial.begin(9600);
-    
-    // RESET THE MODULE
-    pinMode(RFM95_RST, OUTPUT);
-    digitalWrite(RFM95_RST, HIGH);
-    delay(10);
-    digitalWrite(RFM95_RST, LOW);
-    delay(10);
-    digitalWrite(RFM95_RST, HIGH);
-    delay(10);
+  Serial.begin(9600);
+  LoRa.setPins(NSS, RESET, DI00);
+  if (!LoRa.begin(433000000)) {
+    Serial.println("Starting LoRa failed!");
+    while (1);
+  }
+  Serial.println("Connected!");
+  LoRa.setSyncWord(0x34);
 
-    // SETUP LORA MODULE
-    if (!rf95.init()) {
-        Serial.println("RFM95 initialization failed!");
-        while (1);
-    }
-    rf95.setFrequency(RFM95_FREQ);
-    rf95.setTxPower(23, false);
+  pinMode(BUILTIN_LED, OUTPUT);
 }
 
 void loop() {
-    if (rf95.available()) {
-        uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
-        uint8_t len = sizeof(buf);
-        if (rf95.recv(buf, &len)) {
-            Serial.print("Received: ");
-            Serial.println((char*)buf);
-        }
+  i = 0;
+  int packetSize = LoRa.parsePacket();
+  if (packetSize) {
+    while (LoRa.available()) {
+      vals[i] = (char)LoRa.read();
+      i++;
+      Serial.print(i);
+      Serial.print(": ");
+      Serial.println(vals[i-1]);
     }
-    // Send a message
-    const char* message = "Hello, LoRa!"; // Your message here
-    rf95.send((uint8_t*)message, strlen(message)); // Corrected arguments
-    rf95.waitPacketSent();
-    delay(1000);
+    // val = String(rec).toInt();
+    Serial.println(String(vals));
+  }
 }
