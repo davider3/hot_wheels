@@ -12,20 +12,23 @@ Comms::Comms(int ss, int rst, int inter){
 
 void Comms::receiveComm(){
     i = 0;
-    while(LoRa.available()){
-        // GET THROTTLE DATA
-        if(i<3){
-            throttle[i] = (char)LoRa.read();
+    int packetSize = LoRa.parsePacket();
+    if (packetSize) {
+        while(LoRa.available()){
+            // GET THROTTLE DATA
+            if(i<3){
+                throttle[i] = (char)LoRa.read();
+            }
+            // GET STEERING DATA
+            else if(i<6){
+                steering[i-3] = (char)LoRa.read();
+            }
+            // GET LIGHTS
+            else if(i<7){
+                lights = (char)LoRa.read();
+            }
+            ++i;
         }
-        // GET STEERING DATA
-        else if(i<6){
-            steering[i-3] = (char)LoRa.read();
-        }
-        // GET LIGHTS
-        else if(i<7){
-            lights = (char)LoRa.read();
-        }
-        ++i;
     }
 }
 
