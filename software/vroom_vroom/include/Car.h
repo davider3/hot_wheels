@@ -4,22 +4,19 @@
 #include <Arduino.h>
 #include "Comms.h"
 #include "Motor.h"
-// #include "Servo.h"
+#include "Servo.h"
 
 class Car{
 private:
     int headlights;
     Motor motor;
-    // Servo steer;
+    Servo steer;
     Comms radio;
 
 public:
     Car();
 
-    Car(int, int, int, int, int);
-
     void drive();
-
 };
 
 

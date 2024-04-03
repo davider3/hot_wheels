@@ -1,18 +1,15 @@
 #include "Car.h"
+#include "params.h"
 
 Car::Car(){
-    
-}
-
-Car::Car(int mtrPin1, int mtrPin2, int servoPin, int lights, int enPin){
-    motor = Motor(mtrPin1, mtrPin2, enPin);
-    steer.attach(servoPin);
-    headlights = lights;
+    motor = Motor(FORWARD, BACKWARD, ENPIN);
+    steer.attach(STEERING);
+    headlights = LIGHTS;
     pinMode(headlights, OUTPUT);
+    radio = Comms();
 };
 
 void Car::drive(){
-    // TODO: read from comms
     radio.checkComm();
 
     if(radio.getDir()){

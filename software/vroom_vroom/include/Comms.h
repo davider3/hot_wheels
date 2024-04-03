@@ -13,10 +13,8 @@ private:
     char lights = '0';
     int i = 0;
 
-    void parse();
-
 public:
-    Comms(int ss, int rst, int inter);
+    Comms();
 
     void checkComm();
 

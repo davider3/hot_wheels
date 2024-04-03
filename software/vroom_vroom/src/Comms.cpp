@@ -1,8 +1,8 @@
 #include "Comms.h"
 #include "params.h"
 
-Comms::Comms(int ss, int rst, int inter){
-    LoRa.setPins(ss, rst, inter);
+Comms::Comms(){
+    LoRa.setPins(NSS, RESET, INTERRUPT);
     if(!LoRa.begin(RAD_FREQ)){
         // TODO: turn on builtin LED
         while(1);
