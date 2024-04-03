@@ -37,6 +37,6 @@ void loop() {
       Serial.println(vals[i-1]);
     }
     // val = String(rec).toInt();
-    Serial.println(String(vals));
+    Serial.println(String(vals).toInt());
   }
 }

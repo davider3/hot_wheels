@@ -26,17 +26,18 @@ void setup() {
 
 void loop() {
 
-  val = analogRead(4);
+  val = analogRead(4)/16;
 
-  char string[5];
+  char string[4];
   int data = 1010;
-  snprintf(string, sizeof(string), "%04d", val);
+  snprintf(string, sizeof(string), "%03d", val);
   Serial.println(string);
 
   // Serial.println(val);
   LoRa.beginPacket();
   LoRa.print(string);
   LoRa.print("250");
+  LoRa.print("1");
   LoRa.endPacket();
   delay(250);
 }

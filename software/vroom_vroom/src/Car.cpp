@@ -6,22 +6,22 @@ Car::Car(){
 
 Car::Car(int mtrPin1, int mtrPin2, int servoPin, int lights, int enPin){
     motor = Motor(mtrPin1, mtrPin2, enPin);
-    // steer.attach(servoPin);
+    steer.attach(servoPin);
     headlights = lights;
     pinMode(headlights, OUTPUT);
 };
 
 void Car::drive(){
     // TODO: read from comms
-    int values[4] = {1, 255, 180, 1};
+    radio.checkComm();
 
-    if(values[0] == 0){
-        motor.forward(values[1]);
+    if(radio.getDir()){
+        motor.forward(radio.getThrottle());
     }else{
-        motor.backward(values[1]);
+        motor.backward(radio.getThrottle());
     }
 
-    // steer.write(values[2]);
+    steer.write(radio.getSteeing());
 
-    digitalWrite(headlights, values[3]);
+    digitalWrite(headlights, radio.getLights());
 }

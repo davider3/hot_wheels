@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "Camera.h"
 #include "Car.h"
-#include "pins.h"
+#include "params.h"
 
 // const char* ssid = "Helm's Depot";
 // const char* password = "sweetballoon047";
