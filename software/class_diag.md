@@ -17,7 +17,6 @@ classDiagram
   
     Car --|> Motor : Has
     Car --|> Comms : Has
-    Car --|> Camera : Has
 
     class Motor{
         -int goPin
@@ -29,12 +28,59 @@ classDiagram
         +void powerOn(bool turnOn)
     }
 
-    class Camera{
-        +Camera(char* ssid, char*password)
+    class Comms{
+        -char dir
+        -char throttle[3]
+        -char steering[3]
+        -char lights
+        -int i
+
+        +Comms()
+
+        +void checkComm()
+
+        +int getThrottle()
+        +int getSteeing()
+        +int getLights()
+        +int getDir()
     }
 
+    
+
+    note "Camera.h
+    IPAddress camSetup(const char* ssid, const char* password)"
+
+```
+
+```mermaid
+---
+title : RC Controller
+---
+classDiagram
+
+    class Controller{
+        -int throttle
+        -int steer
+        -int lights
+        -int dir
+        -int throttleBias
+        -int steerBias
+        -int i
+        -Comms radio
+        -void throttleCalc()
+        -void steerCalc()
+        -void calibrate()
+
+        +Controller()
+        +void control()
+
+    }
+  
+    Controller --|> Comms : Has
+
     class Comms{
-        TODO
+        +Comms()
+        +void sendSignal()
     }
 
 ```
