@@ -1,3 +1,8 @@
+/* 
+ * Defines parameters and other constants for the project
+ * Created By David Reinhardt
+ */
+
 #define LIGHTS 1
 
 // MOTOR

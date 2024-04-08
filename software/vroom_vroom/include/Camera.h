@@ -1,3 +1,10 @@
+/* 
+ * Begins hosting a server on the provided network that allows
+ * for the video to be streamed by going to the ip address of
+ * the microcontroller 
+ * Created By David Reinhardt
+ */
+
 #ifndef CAMERA_H_
 #define CAMERA_H_
 

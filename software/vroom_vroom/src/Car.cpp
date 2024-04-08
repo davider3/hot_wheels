@@ -9,6 +9,10 @@ Car::Car(){
     radio = Comms();
 };
 
+
+/// @brief this is the main function to control the car.
+///        It will get messages from the radio controller
+///        and then write those values to the actuators
 void Car::drive(){
     radio.checkComm();
 
