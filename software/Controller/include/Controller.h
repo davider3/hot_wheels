@@ -11,8 +11,15 @@ private:
     int steer;
     int lights;
     int dir;
+    int throttleBias;
+    int steerBias;
+    int i;
 
     Comms radio;
+
+    void throttleCalc();
+    void steerCalc();
+    void calibrate();
 
 public:
 

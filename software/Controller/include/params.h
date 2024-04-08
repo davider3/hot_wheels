@@ -9,6 +9,7 @@
 
 // THROTTLE POT
 #define TRIGGER -1 // TODO: choose pin
+#define DIRECTION -1 // TODO: choose pin
 
 // LIGHT SWITCH
 #define LIGHTS -1 // TODO: choose pin
