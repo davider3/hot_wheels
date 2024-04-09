@@ -5,7 +5,8 @@ Comms::Comms(){
     LoRa.setTxPower(20);
     LoRa.setPins(NSS, RESET, DI00);
     if(!LoRa.begin(RAD_FREQ)){
-        // TODO: turn on builtin LED
+        Serial.println("LoRa initialization failed");
+        digitalWrite(LED_BUILTIN, HIGH);
         while(1);
     }
     LoRa.setSyncWord(0x34);

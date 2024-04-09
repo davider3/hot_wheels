@@ -2,14 +2,13 @@
 #define RAD_FREQ 433000000
 #define RESET 22
 #define NSS 15
-#define DI00 2
+#define DI00 13
 
 // STEERING POT
-#define JOYSTICK 4
+#define JOYSTICK 2
 
 // THROTTLE POT
-#define TRIGGER -1 // TODO: choose pin
-#define DIRECTION -1 // TODO: choose pin
+#define TRIGGER 4
 
 // LIGHT SWITCH
-#define LIGHTS -1 // TODO: choose pin
+#define LIGHTS 17

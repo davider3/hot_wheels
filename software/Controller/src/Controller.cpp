@@ -4,7 +4,6 @@ Controller::Controller(){
     pinMode(JOYSTICK, INPUT);
     pinMode(TRIGGER, INPUT); 
     pinMode(LIGHTS, INPUT);
-    pinMode(DIRECTION, INPUT);
     throttle = 0;
     steer = 90;
     lights = 0;
@@ -33,6 +32,14 @@ void Controller::control(){
     steerCalc();
     lights = digitalRead(LIGHTS);
 
+    Serial.print("Throttle: ");
+    Serial.print(throttle);
+    Serial.print(dir ? " forward " : " backward ");
+    Serial.print("Turn: ");
+    Serial.print(steer);
+    Serial.print(" Lights are ");
+    Serial.println(lights ? "on" : "off");
+
     radio.sendSignal(dir, throttle, steer, lights);
 }
 
@@ -45,7 +52,7 @@ void Controller::throttleCalc(){
     } else if(throttle < throttleBias){
         dir = 0;
         // TODO: increase 0 to whatever value starts to spin the motors
-        throttle = map(throttle, 0, throttleBias, 0, 255);
+        throttle = map(throttle, throttleBias, 0, 0, 255);
     } else if(throttle > throttleBias){
         dir = 1;
         // TODO: increase 0 to whatever value starts to spin the motors
