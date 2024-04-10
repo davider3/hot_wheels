@@ -4,13 +4,13 @@
 #include <Arduino.h>
 #include "Comms.h"
 #include "Motor.h"
-#include "Servo.h"
+#include "s3servo.h"
 
 class Car{
 private:
     int headlights;
     Motor motor;
-    Servo steer;
+    s3servo steer;
     Comms radio;
 
 public:

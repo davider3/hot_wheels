@@ -11,6 +11,12 @@
 IPAddress ip;
 Car car;
 
+// WIFI
+// const char* ssid = "David";
+// const char* password = "ckmh013$";
+const char* ssid = "Helm's Depot";
+const char* password = "sweetballoon047";
+
 void setup() {
 
   Serial.begin(115200);
