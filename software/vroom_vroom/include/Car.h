@@ -17,6 +17,7 @@ public:
     Car();
 
     void drive();
+    void sendIP(IPAddress ip);
 };
 
 

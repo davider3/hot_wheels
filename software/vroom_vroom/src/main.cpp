@@ -26,13 +26,10 @@ void setup() {
   ip = camSetup(ssid, password);
   
   car = Car();
+  car.sendIP(ip);
 }
 
 void loop() {
 
   car.drive();
-
-  Serial.println(ip);
-
-  // TODO: send the ip to the controller
 }

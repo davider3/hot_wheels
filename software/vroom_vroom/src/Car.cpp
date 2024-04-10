@@ -26,3 +26,7 @@ void Car::drive(){
 
     digitalWrite(headlights, radio.getLights());
 }
+
+void Car::sendIP(IPAddress ip){
+    radio.sendSignal(ip);
+}
