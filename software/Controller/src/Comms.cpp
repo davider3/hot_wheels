@@ -14,10 +14,8 @@ Comms::Comms(){
 
 void Comms::sendSignal(int dir, int speed, int steer, int lights){
 
-    char fast[4];
     snprintf(fast, sizeof(fast), "%03d", speed);
 
-    char angle[4];
     snprintf(angle, sizeof(angle), "%03d", steer);
 
     LoRa.beginPacket();
@@ -26,4 +24,16 @@ void Comms::sendSignal(int dir, int speed, int steer, int lights){
     LoRa.print(angle);
     LoRa.print(lights);
     LoRa.endPacket();
+}
+
+void Comms::checkComm(){
+    i = 0;
+    int packetSize = LoRa.parsePacket();
+    if (packetSize) {
+        while(LoRa.available()){
+            // GET THROTTLE DATA
+            ipAddress[i] = (char)LoRa.read();
+            ++i;
+        }
+    }
 }

@@ -7,12 +7,20 @@
 
 class Comms{
 private:
-
+    char fast[4];
+    char angle[4];
+    char ipAddress[16] = {'-', '-', '-', '-',
+                          '-', '-', '-', '-',
+                          '-', '-', '-', '-',
+                          '-', '-', '-', '-'};
+    int i = 0;
 
 public:
     Comms();
 
     void sendSignal(int dir, int speed, int steer, int lights);
+
+    void checkComm();
 
 };
 

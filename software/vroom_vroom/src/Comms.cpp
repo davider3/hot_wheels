@@ -38,6 +38,17 @@ void Comms::checkComm(){
     }
 }
 
+
+void Comms::sendSignal(IPAddress ip){
+
+    sprintf(send, "%d.%d.%d.%d", ip[0], ip[1], ip[2], ip[3]);
+
+    LoRa.beginPacket();
+    LoRa.print(send);
+    LoRa.endPacket();
+
+}
+
 /// @brief Gets value for the lights
 /// @return 1 for lights on
 ///         0 for lights off
