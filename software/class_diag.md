@@ -8,7 +8,7 @@ classDiagram
 
     class Car{
         -Motor motor
-        -Servo steer
+        -s3servo steer
         -Comms radio
         -int headlights
         +Car(int mtrPin1, int mtrPin2, int servoPin)
