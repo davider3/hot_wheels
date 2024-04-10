@@ -26,7 +26,7 @@ void Comms::sendSignal(int dir, int speed, int steer, int lights){
     LoRa.endPacket();
 }
 
-void Comms::checkComm(){
+bool Comms::checkComm(){
     i = 0;
     int packetSize = LoRa.parsePacket();
     if (packetSize) {
@@ -35,5 +35,11 @@ void Comms::checkComm(){
             ipAddress[i] = (char)LoRa.read();
             ++i;
         }
+        return false;
     }
+    return true;
+}
+
+String Comms::getIPAddress(){
+    return String(ipAddress);
 }

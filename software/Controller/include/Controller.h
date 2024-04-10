@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include "params.h"
 #include "Comms.h"
+#include "Display.h"
 
 class Controller{
 private:
@@ -16,6 +17,7 @@ private:
     int i;
 
     Comms radio;
+    Display screen;
 
     void throttleCalc();
     void steerCalc();

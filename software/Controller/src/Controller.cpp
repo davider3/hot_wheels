@@ -12,6 +12,10 @@ Controller::Controller(){
     calibrate();
 
     radio = Comms();
+
+    while(radio.checkComm());
+    screen.showIP(radio.getIPAddress());
+
 }
 
 void Controller::calibrate(){

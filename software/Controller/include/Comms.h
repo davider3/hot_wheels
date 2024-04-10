@@ -20,7 +20,9 @@ public:
 
     void sendSignal(int dir, int speed, int steer, int lights);
 
-    void checkComm();
+    bool checkComm();
+
+    String getIPAddress();
 
 };
 
