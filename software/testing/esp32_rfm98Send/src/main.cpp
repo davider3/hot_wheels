@@ -4,7 +4,7 @@ char rec[8];
 int i = 0;
 int val = 0;
 
-#define RESET 22
+#define RESET 5
 #define NSS 15
 #define DI00 2
 

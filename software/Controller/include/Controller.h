@@ -17,7 +17,8 @@ private:
     int i;
 
     Comms radio;
-    Display screen;
+    // TODO: implement screen code
+    // Display screen;
 
     void throttleCalc();
     void steerCalc();
@@ -26,6 +27,7 @@ private:
 public:
 
     Controller();
+    Controller(bool);
 
     void control();
 

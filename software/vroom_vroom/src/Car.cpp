@@ -6,6 +6,7 @@ Car::Car(){
     steer.attach(STEERING);
     headlights = LIGHTS;
     pinMode(headlights, OUTPUT);
+    Serial.println("Connecting to comms");
     radio = Comms();
 };
 
@@ -22,11 +23,21 @@ void Car::drive(){
         motor.backward(radio.getThrottle());
     }
 
-    steer.write(radio.getSteeing());
+    // steer.write(radio.getSteeing());
 
     digitalWrite(headlights, radio.getLights());
 }
 
 void Car::sendIP(IPAddress ip){
-    radio.sendSignal(ip);
+    // radio.sendSignal(ip);
+}
+
+void Car::printDebug(){
+    // Serial.print("Throttle: ");
+    // Serial.print(radio.getThrottle());
+    // Serial.print(radio.getDir() ? " Forward " : " Backward ");
+    // Serial.print("Steering: ");
+    // Serial.print(radio.getSteeing());
+    // Serial.print(" Lights are ");
+    // Serial.println(radio.getLights() ? "on" : "off");
 }

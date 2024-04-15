@@ -13,9 +13,9 @@ Controller::Controller(){
 
     radio = Comms();
 
-    // TEST
-    while(radio.checkComm());
-    screen.showIP(radio.getIPAddress());
+    // // TEST
+    // while(radio.checkComm());
+    // screen.showIP(radio.getIPAddress());
 
 }
 

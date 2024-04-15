@@ -18,6 +18,7 @@ public:
 
     void drive();
     void sendIP(IPAddress ip);
+    void printDebug();
 };
 
 

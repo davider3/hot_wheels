@@ -1,13 +1,14 @@
 #include <SPI.h>
 #include <LoRa.h>
+#include <Arduino.h>
 char rec[8];
 int i = 0;
 int val = 0;
 char vals[8];
 char pot1[4];
 
-#define RESET 22
-#define NSS 15
+#define RESET 6
+#define NSS 7
 #define DI00 2
 
 bool state = 0;
@@ -23,6 +24,7 @@ void setup() {
     Serial.println("Starting LoRa failed!");
     while (1);
   }
+  delay(5000);
   Serial.println("Connected!");
   LoRa.setSyncWord(0x34);
 

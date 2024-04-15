@@ -1,6 +1,6 @@
 // RADIO
 #define RAD_FREQ 433000000
-#define RESET 22
+#define RESET 5
 #define NSS 15
 #define DI00 13
 
